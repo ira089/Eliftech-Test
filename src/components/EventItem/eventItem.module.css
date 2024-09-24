@@ -13,6 +13,26 @@
 }
 .wrapTitle h4 {
   margin-bottom: 14px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: inherit;
+  -webkit-box-orient: vertical;
+}
+
+.wrapTitle p {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: inherit;
+  -webkit-box-orient: vertical;
+  min-height: calc(4 * 1.29em);
+  overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .wrapLink {

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getBoardsThunk } from '../../redux/board/operationsBoard';
 import EventsList from 'components/EventsList/EventsList';
 import styles from './boardPage.module.css';
 
 const BoardPage = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(boardThunk());
-  // }, []);
+  useEffect(() => {
+    dispatch(getBoardsThunk({ page: 1 }));
+  }, [dispatch]);
 
   return (
     <section className={styles.container}>
