@@ -1,17 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectBoards } from '../../redux/board/selectorsBoard';
-// import { styled } from '@mui/material/styles';
+import { addPage } from '../../redux/search/searchSlice';
 import Grid from '@mui/material/Grid2';
 import Box from '@mui/material/Box';
 import EventItem from 'components/EventItem/EventItem';
 import PaginationMy from 'components/PaginationMy/PaginationMy';
 
 const EventsList = () => {
-  const { isLoading, error, boards, total, page } = useSelector(selectBoards);
-  const totalPages = total / 12;
+  const { isLoading, error, boards, total } = useSelector(selectBoards);
+
+  const totalPages = Math.ceil(total / 12);
   const isBoards = Boolean(boards.length);
-  console.log(boards);
+
   const dispatch = useDispatch();
 
   const elements = boards.map(item => (
@@ -20,9 +21,9 @@ const EventsList = () => {
     </Grid>
   ));
 
-  // const selectPage = num => {
-  //   dispatch(addPage(num));
-  // };
+  const selectPage = num => {
+    dispatch(addPage(num));
+  };
 
   return (
     <>
@@ -38,11 +39,7 @@ const EventsList = () => {
         !isLoading && <p>sorry boards not found</p>
       )}
       {!!totalPages && !boards.length < 12 && (
-        <PaginationMy
-          page={page}
-          totalPages={totalPages}
-          // selectPage={selectPage}
-        />
+        <PaginationMy totalPages={totalPages} selectPage={selectPage} />
       )}
     </>
   );

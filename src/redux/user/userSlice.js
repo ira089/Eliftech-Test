@@ -8,7 +8,7 @@ import {
 
 const handleFulfilledGet = (state, { payload }) => {
   handleFulfilled(state);
-  state.users = payload;
+  state.users = payload.result;
 };
 
 const handleFulfilledAdd = (state, { payload }) => {

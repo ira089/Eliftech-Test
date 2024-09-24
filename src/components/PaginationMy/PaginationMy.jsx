@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-export default function CustomIcons() {
+const PaginationMy = ({ totalPages, selectPage }) => {
   return (
     <Stack
       spacing={2}
@@ -15,7 +15,8 @@ export default function CustomIcons() {
       }}
     >
       <Pagination
-        count={10}
+        count={totalPages}
+        onChange={(_, num) => selectPage(num)}
         renderItem={item => (
           <PaginationItem
             slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
@@ -25,4 +26,6 @@ export default function CustomIcons() {
       />
     </Stack>
   );
-}
+};
+
+export default PaginationMy;

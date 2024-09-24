@@ -31,7 +31,6 @@
   line-clamp: inherit;
   -webkit-box-orient: vertical;
   min-height: calc(4 * 1.29em);
-  overflow: hidden;
   white-space: pre-wrap;
 }
 

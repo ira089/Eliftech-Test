@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import styles from './eventItem.module.css';
 
 const EventItem = ({ item }) => {
-  console.log(item);
   const { title, description } = item;
   return (
     <div className={styles.wrapItem}>
@@ -12,8 +11,8 @@ const EventItem = ({ item }) => {
         <p>{description}</p>
       </div>
       <div className={styles.wrapLink}>
-        <NavLink>Register</NavLink>
-        <NavLink>View</NavLink>
+        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/view">View</NavLink>
       </div>
     </div>
   );
