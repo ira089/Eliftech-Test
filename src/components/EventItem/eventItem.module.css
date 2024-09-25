@@ -20,6 +20,8 @@
   -webkit-line-clamp: 2;
   line-clamp: inherit;
   -webkit-box-orient: vertical;
+  min-height: calc(2 * 1.29em);
+  white-space: pre-wrap;
 }
 
 .wrapTitle p {

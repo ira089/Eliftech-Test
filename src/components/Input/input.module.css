@@ -1,0 +1,48 @@
+.inputWrap {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrap label {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.inputWrap input {
+  color: #1d1e21;
+  width: 100%;
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 60px;
+  background: #fff;
+  height: 44px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 150%;
+}
+.inputWrap input::placeholder {
+  color: rgba(29, 30, 33, 0.4);
+}
+
+.inputWrap input:focus {
+  border: 1px solid #59b17a;
+}
+.inputWrap input:hover {
+  border: 1px solid #59b17a;
+}
+
+.inputWrap span {
+  display: block;
+  position: absolute;
+  top: 100%;
+  padding-left: 6px;
+  color: #ef2447;
+  font-size: 10px;
+  font-size: 8px;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+}

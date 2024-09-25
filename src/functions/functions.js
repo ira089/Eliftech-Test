@@ -11,3 +11,7 @@ export const handleFulfilled = state => {
   state.isLoading = false;
   state.error = null;
 };
+
+export const allFieldsFilled = data => {
+  return Object.values(data).every(field => field.trim() !== '');
+};
