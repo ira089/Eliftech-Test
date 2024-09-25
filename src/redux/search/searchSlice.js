@@ -7,6 +7,9 @@ const searchClice = createSlice({
     title: '',
     eventDate: '',
     organizer: '',
+    fullName: '',
+    email: '',
+    filter: '',
   },
   reducers: {
     addPage: (state, { payload }) => {
@@ -22,9 +25,25 @@ const searchClice = createSlice({
     addOrganizer: (state, { payload }) => {
       state.organizer = payload;
     },
+    addFullName: (state, { payload }) => {
+      state.fullName = payload;
+    },
+    addEmail: (state, { payload }) => {
+      state.email = payload;
+    },
+    addSortFilter: (state, { payload }) => {
+      state.filter = payload;
+    },
   },
 });
 
-export const { addPage, addTitle, addEventDate, addOrganizer } =
-  searchClice.actions;
+export const {
+  addPage,
+  addTitle,
+  addEventDate,
+  addOrganizer,
+  addFullName,
+  addEmail,
+  addSortFilter,
+} = searchClice.actions;
 export default searchClice.reducer;

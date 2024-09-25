@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectBoards } from '../../redux/board/selectorsBoard';
+import {
+  selectBoards,
+  selectSortedBoards,
+} from '../../redux/board/selectorsBoard';
 import { addPage } from '../../redux/search/searchSlice';
 import Grid from '@mui/material/Grid2';
 import Box from '@mui/material/Box';
@@ -10,12 +13,15 @@ import PaginationMy from 'components/PaginationMy/PaginationMy';
 const EventsList = () => {
   const { isLoading, error, boards, total } = useSelector(selectBoards);
 
+  const itemsSorted = useSelector(selectSortedBoards);
+
   const totalPages = Math.ceil(total / 12);
-  const isBoards = Boolean(boards.length);
+  // const isBoards = Boolean(boards.length);
+  const isItemsSorted = Boolean(itemsSorted.length);
 
   const dispatch = useDispatch();
 
-  const elements = boards.map(item => (
+  const elements = itemsSorted.map(item => (
     <Grid size={3}>
       <EventItem key={item._id} item={item} />
     </Grid>
@@ -29,7 +35,7 @@ const EventsList = () => {
     <>
       {isLoading && <p>...Loading</p>}
       {error && <p>{error.message}</p>}
-      {isBoards ? (
+      {isItemsSorted ? (
         <Box sx={{ width: '100%' }}>
           <Grid container rowSpacing={3} columnSpacing={3}>
             {elements}

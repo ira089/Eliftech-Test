@@ -1,0 +1,29 @@
+.container {
+  padding: 40px;
+}
+
+.container h1 {
+  margin-bottom: 40px;
+}
+
+.container p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.container input {
+  font-size: 14px;
+  color: #1d1e21;
+  border: 1px solid rgba(29, 30, 33, 0.1);
+  border-radius: 60px;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 8px;
+}
+.container input:focus {
+  border: 1px solid #59b17a;
+}
+.container input:hover {
+  border: 1px solid #59b17a;
+}

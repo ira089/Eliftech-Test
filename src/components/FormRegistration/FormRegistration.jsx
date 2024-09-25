@@ -15,7 +15,7 @@ const FormRegistration = () => {
     dateOfBirth: '',
     hearEvent: '',
   });
-  console.log(formData);
+  // console.log(formData);
 
   useEffect(() => {
     const addUserData = () => {
@@ -33,8 +33,8 @@ const FormRegistration = () => {
     evt.preventDefault();
     const { name, value } = evt.target;
 
-    console.log(name);
-    console.log(value);
+    // console.log(name);
+    // console.log(value);
 
     setFormData(prevData => {
       const updatedData = {
@@ -88,7 +88,7 @@ const FormRegistration = () => {
             type="radio"
             name="hearEvent"
             value="social_media"
-            handleChange={handleChangeData}
+            // handleChange={handleChangeData}
             onChange={handleChangeData}
           />
           <label htmlFor="hearEvent">Social media</label>
@@ -98,7 +98,7 @@ const FormRegistration = () => {
               type="radio"
               name="hearEvent"
               value="friends"
-              handleChange={handleChangeData}
+              // handleChange={handleChangeData}
               onChange={handleChangeData}
             />
             Friends
@@ -109,7 +109,7 @@ const FormRegistration = () => {
               type="radio"
               name="hearEvent"
               value="found_myself"
-              handleChange={handleChangeData}
+              // handleChange={handleChangeData}
               onChange={handleChangeData}
             />
             Found myself
