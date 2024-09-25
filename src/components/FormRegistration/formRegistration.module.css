@@ -2,50 +2,10 @@
   display: flex;
   flex-direction: column;
   gap: 13px;
-  width: 50%;
+  width: 56%;
 }
 
 .wrapRadio {
   display: flex;
   gap: 6px;
 }
-
-/* .radio {
-  background: #54adff;
-} */
-
-/* .wrapRadio input:checked + .radio {
-  background: #54adff;
-} */
-
-/* .wrapRadio input {
-  background: #54adff;
-  color: red;
-  border: 1px solid green;
-} */
-/* .radio:checked {
-  background: #54adff;
-}
-input[type='radio' i]:checked {
-  background: #54adff;
-} */
-/* .wrapRadio label {
-  width: 150px;
-  display: inline-block;
-  line-height: 32px;
-  padding: 0 10px;
-  text-align: center;
-}
-
-input[type='radio']:checked + label {
-  background-color: darkgreen;
-  color: white;
-} */
-
-/* [type='radio'] {
-  display: none;
-} */
-
-/* [type='radio']:checked {
-  background-color: aqua;
-} */

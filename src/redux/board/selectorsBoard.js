@@ -3,9 +3,8 @@ export const selectSearch = state => state.search;
 
 export const selectSortedBoards = state => {
   const { filter } = selectSearch(state);
-  console.log(filter);
+
   const { boards } = selectBoards(state);
-  console.log(boards);
 
   if (!filter) {
     return boards;

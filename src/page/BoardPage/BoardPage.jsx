@@ -12,7 +12,7 @@ const BoardPage = () => {
   const { page } = useSelector(selectSearch);
 
   const [sort, setSort] = useState('');
-  console.log(sort);
+
   const handleChange = event => {
     setSort(event.target.value);
   };

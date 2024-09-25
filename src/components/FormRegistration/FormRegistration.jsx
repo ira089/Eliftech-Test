@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserThunk } from '../../redux/user/operationUser';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import { allFieldsFilled } from '../../functions/functions';
+import { FormSchema } from '../../schemas/schemas';
 import Input from '../Input/Input';
+import RadioButtun from 'components/RadioButtun/RadioButtun';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import styles from './formRegistration.module.css';
 
 const FormRegistration = () => {
@@ -15,7 +19,7 @@ const FormRegistration = () => {
     dateOfBirth: '',
     hearEvent: '',
   });
-  // console.log(formData);
+  console.log(formData);
 
   useEffect(() => {
     const addUserData = () => {
@@ -24,17 +28,18 @@ const FormRegistration = () => {
       }
       console.log('чао какао');
       dispatch(addUserThunk(formData));
-      // setFormData({ name: '', email: '', dateOfBirth: '', hearEvent: '' });
+      setFormData({ name: '', email: '', dateOfBirth: '', hearEvent: '' });
     };
     addUserData();
-  }, [dispatch, formData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formData]);
 
   const handleChangeData = evt => {
     evt.preventDefault();
     const { name, value } = evt.target;
 
-    // console.log(name);
-    // console.log(value);
+    console.log(name);
+    console.log(value);
 
     setFormData(prevData => {
       const updatedData = {
@@ -54,6 +59,7 @@ const FormRegistration = () => {
         dateOfBirth: '',
         hearEvent: '',
       }}
+      validationSchema={FormSchema}
     >
       <Form className={styles.form}>
         <Input
@@ -70,51 +76,18 @@ const FormRegistration = () => {
           type="email"
           textLabel="Email"
         />
-        <Input
+        <DatePicker />
+        {/* <Input
           handleChange={handleChangeData}
           valueInput={formData.dateOfBirth}
           name="dateOfBirth"
           type="date"
           textLabel="Date of birth"
+        /> */}
+        <RadioButtun
+          value={formData.hearEvent}
+          handleChange={handleChangeData}
         />
-        <div
-          role="group"
-          aria-labelledby="my-radio-group"
-          className={styles.wrapRadio}
-        >
-          <Field
-            id="hearEvent"
-            className={styles.radio}
-            type="radio"
-            name="hearEvent"
-            value="social_media"
-            // handleChange={handleChangeData}
-            onChange={handleChangeData}
-          />
-          <label htmlFor="hearEvent">Social media</label>
-          <label>
-            <Field
-              className={styles.radio}
-              type="radio"
-              name="hearEvent"
-              value="friends"
-              // handleChange={handleChangeData}
-              onChange={handleChangeData}
-            />
-            Friends
-          </label>
-          <label>
-            <Field
-              className={styles.radio}
-              type="radio"
-              name="hearEvent"
-              value="found_myself"
-              // handleChange={handleChangeData}
-              onChange={handleChangeData}
-            />
-            Found myself
-          </label>
-        </div>
       </Form>
     </Formik>
   );
