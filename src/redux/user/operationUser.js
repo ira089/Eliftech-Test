@@ -16,7 +16,6 @@ export const getUsersThunk = createAsyncThunk(
 export const addUserThunk = createAsyncThunk(
   'users/post',
   async (data, thunkAPI) => {
-    console.log(data);
     try {
       const user = userApi.fetchUserAdd(data);
       return user;

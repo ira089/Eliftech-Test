@@ -6,8 +6,6 @@ import { allFieldsFilled } from '../../functions/functions';
 import { FormSchema } from '../../schemas/schemas';
 import Input from '../Input/Input';
 import RadioButtun from 'components/RadioButtun/RadioButtun';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import styles from './formRegistration.module.css';
 
 const FormRegistration = () => {
@@ -19,14 +17,13 @@ const FormRegistration = () => {
     dateOfBirth: '',
     hearEvent: '',
   });
-  console.log(formData);
 
   useEffect(() => {
     const addUserData = () => {
       if (!allFieldsFilled(formData)) {
         return;
       }
-      console.log('чао какао');
+
       dispatch(addUserThunk(formData));
       setFormData({ name: '', email: '', dateOfBirth: '', hearEvent: '' });
     };
@@ -37,9 +34,6 @@ const FormRegistration = () => {
   const handleChangeData = evt => {
     evt.preventDefault();
     const { name, value } = evt.target;
-
-    console.log(name);
-    console.log(value);
 
     setFormData(prevData => {
       const updatedData = {
@@ -76,14 +70,14 @@ const FormRegistration = () => {
           type="email"
           textLabel="Email"
         />
-        <DatePicker />
-        {/* <Input
+
+        <Input
           handleChange={handleChangeData}
           valueInput={formData.dateOfBirth}
           name="dateOfBirth"
           type="date"
           textLabel="Date of birth"
-        /> */}
+        />
         <RadioButtun
           value={formData.hearEvent}
           handleChange={handleChangeData}

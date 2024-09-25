@@ -4,7 +4,7 @@ export const selectSearch = state => state.search;
 
 export const selectFilteredUsers = state => {
   const { fullName, email } = selectSearch(state);
-  console.log(fullName);
+
   const { users } = selectUsers(state);
 
   if (!fullName && !email) {
