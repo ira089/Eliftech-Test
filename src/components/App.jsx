@@ -4,14 +4,6 @@ import BoardPage from 'page/BoardPage/BoardPage';
 import RegistraionPage from 'page/RegistraionPage/RegistraionPage';
 import ParticipantsPage from 'page/ParticipantsPage/ParticipantsPage';
 
-// const BoardPage = lazy(() => import('../page/BoardPage/BoardPage'));
-// const RegistraionPage = lazy(() =>
-//   import('../page/RegistraionPage/RegistraionPage')
-// );
-// const ParticipantsPage = lazy(() =>
-//   import('../page/ParticipantsPage/ParticipantsPage')
-// );
-
 const App = () => {
   return (
     <Routes>

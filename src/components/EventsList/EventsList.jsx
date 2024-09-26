@@ -16,7 +16,7 @@ const EventsList = () => {
   const itemsSorted = useSelector(selectSortedBoards);
 
   const totalPages = Math.ceil(total / 12);
-  // const isBoards = Boolean(boards.length);
+
   const isItemsSorted = Boolean(itemsSorted.length);
 
   const dispatch = useDispatch();

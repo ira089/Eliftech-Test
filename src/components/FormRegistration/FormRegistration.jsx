@@ -5,7 +5,7 @@ import { Formik, Form } from 'formik';
 import { allFieldsFilled } from '../../functions/functions';
 import { FormSchema } from '../../schemas/schemas';
 import Input from '../Input/Input';
-import RadioButtun from 'components/RadioButtun/RadioButtun';
+import RadioButton from 'components/RadioButton/RadioButton';
 import styles from './formRegistration.module.css';
 
 const FormRegistration = () => {
@@ -23,7 +23,6 @@ const FormRegistration = () => {
       if (!allFieldsFilled(formData)) {
         return;
       }
-
       dispatch(addUserThunk(formData));
       setFormData({ name: '', email: '', dateOfBirth: '', hearEvent: '' });
     };
@@ -34,13 +33,11 @@ const FormRegistration = () => {
   const handleChangeData = evt => {
     evt.preventDefault();
     const { name, value } = evt.target;
-
     setFormData(prevData => {
       const updatedData = {
         ...prevData,
         [name]: value,
       };
-
       return updatedData;
     });
   };
@@ -70,7 +67,6 @@ const FormRegistration = () => {
           type="email"
           textLabel="Email"
         />
-
         <Input
           handleChange={handleChangeData}
           valueInput={formData.dateOfBirth}
@@ -78,7 +74,7 @@ const FormRegistration = () => {
           type="date"
           textLabel="Date of birth"
         />
-        <RadioButtun
+        <RadioButton
           value={formData.hearEvent}
           handleChange={handleChangeData}
         />
